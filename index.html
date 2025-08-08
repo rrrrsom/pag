@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <title>🍲 Mano receptai</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>🍲 Mano receptai</h1>
-        <nav>
-            <a href="index.html">Pradžia</a>
-        </nav>
+        <div class="controls">
+            <input type="text" id="search" placeholder="🔍 Ieškoti recepto...">
+            <button id="themeToggle">🌙</button>
+        </div>
     </header>
 
     <main>
-        <div class="recipe-list">
-            <div class="recipe-card">
+        <div class="recipe-list" id="recipeList">
+            <div class="recipe-card" data-title="Blynai">
                 <img src="images/blynai.jpg" alt="Blynai">
                 <h2><a href="receptas1.html">Blynai</a></h2>
             </div>
-            <div class="recipe-card">
+            <div class="recipe-card" data-title="Cezario salotos">
                 <img src="images/salotos.jpg" alt="Cezario salotos">
                 <h2><a href="receptas2.html">Cezario salotos</a></h2>
             </div>
-            <div class="recipe-card">
+            <div class="recipe-card" data-title="Daržovių sriuba">
                 <img src="images/sriuba.jpg" alt="Daržovių sriuba">
                 <h2><a href="receptas3.html">Daržovių sriuba</a></h2>
             </div>
         </div>
     </main>
+
+    <footer>
+        <p>© 2025 Mano receptai</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
