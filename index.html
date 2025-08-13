@@ -3,48 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Receptai su paieška ir filtrais</title>
-<style>
-  body {
-    font-family: Arial, sans-serif; background: #fff8f0; color: #333; margin: 0; padding: 20px;
-  }
-  header {
-    text-align: center; margin-bottom: 20px;
-  }
-  #search {
-    padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;
-  }
-  .filters {
-    margin: 15px 0; text-align: center;
-  }
-  .filters button {
-    margin: 0 5px; padding: 8px 15px; border: none; background: #d35400; color: white; border-radius: 5px; cursor: pointer;
-  }
-  .filters button.active,
-  .filters button:hover {
-    background: #e67e22;
-  }
-  .recipe-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 15px;
-  }
-  .recipe-card {
-    background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px; text-align: center;
-  }
-  .recipe-card img {
-    max-width: 100%; height: 150px; object-fit: cover; border-radius: 6px;
-  }
-  .recipe-card h2 {
-    margin: 10px 0 0;
-  }
-</style>
+<title>Receptai</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header>
   <h1>🍲 Mano receptai</h1>
-  <input type="text" id="search" placeholder="Ieškoti recepto..."/>
+  <input type="text" id="search" placeholder="Ieškoti recepto..." />
   <div class="filters">
     <button data-category="all" class="active">Visi</button>
     <button data-category="pusryciai">Pusryčiai</button>
@@ -52,55 +17,30 @@
     <button data-category="desertai">Desertai</button>
   </div>
 </header>
-
 <main>
   <div class="recipe-list" id="recipeList">
-    <div class="recipe-card" data-title="Blynai" data-category="pusryciai">
-      <img src="https://cdn.pixabay.com/photo/2017/04/23/17/59/pancakes-2251073_1280.jpg" alt="Blynai"/>
-      <h2>Blynai</h2>
+    <div class="recipe-card" data-title="Blynai su uogomis" data-category="pusryciai">
+      <img src="images/blynai_uogos.jpg" alt="Blynai su uogomis"/>
+      <h2>Blynai su uogomis</h2>
     </div>
-    <div class="recipe-card" data-title="Cezario salotos" data-category="pietus">
-      <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/food-1239240_1280.jpg" alt="Cezario salotos"/>
-      <h2>Cezario salotos</h2>
+    <div class="recipe-card" data-title="Kiaušinienė su daržovėmis" data-category="pusryciai">
+      <img src="images/kiausiniene_darzoves.jpg" alt="Kiaušinienė su daržovėmis"/>
+      <h2>Kiaušinienė su daržovėmis</h2>
+    </div>
+    <div class="recipe-card" data-title="Daržovių sriuba" data-category="pietus">
+      <img src="images/darzoviu_sriuba.jpg" alt="Daržovių sriuba"/>
+      <h2>Daržovių sriuba</h2>
+    </div>
+    <div class="recipe-card" data-title="Kepta vištiena su ryžiais" data-category="pietus">
+      <img src="images/vistiena_ryziai.jpg" alt="Kepta vištiena su ryžiais"/>
+      <h2>Kepta vištiena su ryžiais</h2>
     </div>
     <div class="recipe-card" data-title="Šokoladinis pyragas" data-category="desertai">
-      <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/chocolate-cake-2291908_1280.jpg" alt="Šokoladinis pyragas"/>
+      <img src="images/sokoladinis_pyragas.jpg" alt="Šokoladinis pyragas"/>
       <h2>Šokoladinis pyragas</h2>
     </div>
   </div>
 </main>
-
-<script>
-  const searchInput = document.getElementById('search');
-  const filterButtons = document.querySelectorAll('.filters button');
-  const cards = document.querySelectorAll('.recipe-card');
-
-  function filterRecipes() {
-    const searchText = searchInput.value.toLowerCase();
-    const activeCategoryBtn = document.querySelector('.filters button.active');
-    const category = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
-
-    cards.forEach(card => {
-      const title = card.getAttribute('data-title').toLowerCase();
-      const cardCategory = card.getAttribute('data-category');
-
-      const matchesSearch = title.includes(searchText);
-      const matchesCategory = category === 'all' || category === cardCategory;
-
-      card.style.display = (matchesSearch && matchesCategory) ? '' : 'none';
-    });
-  }
-
-  searchInput.addEventListener('input', filterRecipes);
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterRecipes();
-    });
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
