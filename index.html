@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Receptai su paieška ir filtrais</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>🍲 Paprasti receptai</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <h1>🍲 Paprasti receptai</h1>
+        <div class="controls">
+            <input type="text" id="search" placeholder="🔍 Ieškoti recepto...">
+            <button id="themeToggle">🌙</button>
+        </div>
+        <div class="filters">
+          <button data-category="all" class="active">Visi</button>
+          <button data-category="pusryciai">Pusryčiai</button>
+          <button data-category="pietus">Pietūs</button>
+          <button data-category="desertai">Desertai</button>
+        </div>
+    </header>
 
-<header>
-  <h1>🍲 Mano receptai</h1>
-  <input type="text" id="search" placeholder="Ieškoti recepto..."/>
-  <div class="filters">
-    <button data-category="all" class="active">Visi</button>
-    <button data-category="pusryciai">Pusryčiai</button>
-    <button data-category="pietus">Pietūs</button>
-    <button data-category="desertai">Desertai</button>
-  </div>
-</header>
+    <main>
+        <div class="recipe-list" id="recipeList">
+            <div class="recipe-card" data-title="Blynai" data-category="pusryciai">
+                <img src="images/blynai.jpg" alt="Blynai">
+                <h2><a href="receptas1.html">Blynai</a></h2>
+            </div>
+            <div class="recipe-card" data-title="Cezario salotos" data-category="pietus">
+                <img src="images/salotos.jpg" alt="Cezario salotos">
+                <h2><a href="receptas2.html">Cezario salotos</a></h2>
+            </div>
+            <div class="recipe-card" data-title="Daržovių sriuba" data-category="pietus">
+                <img src="images/sriuba.jpg" alt="Daržovių sriuba">
+                <h2><a href="receptas3.html">Daržovių sriuba</a></h2>
+            </div>
+        </div>
+    </main>
 
-<main>
-  <div class="recipe-list" id="recipeList">
-    <div class="recipe-card" data-title="Blynai" data-category="pusryciai">
-      <img src="images/blynai.jpg" alt="Blynai"/>
-      <h2>Blynai</h2>
-    </div>
-    <div class="recipe-card" data-title="Cezario salotos" data-category="pietus">
-      <img src="images/salotos.jpg" alt="Cezario salotos"/>
-      <h2>Cezario salotos</h2>
-    </div>
-    <div class="recipe-card" data-title="Šokoladinis pyragas" data-category="desertai">
-      <img src="images/pyragas.jpg" alt="Šokoladinis pyragas"/>
-      <h2>Šokoladinis pyragas</h2>
-    </div>
-  </div>
-</main>
+    <footer>
+        <p>© 2025 Paprasti receptai</p>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
